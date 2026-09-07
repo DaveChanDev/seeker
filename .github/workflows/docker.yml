@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: dave2758/seeker
+  IMAGE_NAME: davechandev/seeker
 
 jobs:
   build-and-push:
