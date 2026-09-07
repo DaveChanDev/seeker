@@ -129,7 +129,7 @@ version: '3.8'
 
 services:
   seeker:
-    image: ghcr.io/dave2758/seeker-media-:latest # 直接拉取官方云端构建镜像 (或本地构建: build: .)
+    image: ghcr.io/dave2758/seeker:latest # 直接拉取官方云端构建镜像 (或本地构建: build: .)
     container_name: seeker
     restart: unless-stopped
     ports:
@@ -171,7 +171,7 @@ docker run -d \
   --restart unless-stopped \
   -p 8899:8899 \
   -v /path/to/your/movies:/data/movies \
-  ghcr.io/dave2758/seeker-media-:latest
+  ghcr.io/dave2758/seeker:latest
 ```
 
 ---
