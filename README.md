@@ -129,7 +129,7 @@ version: '3.8'
 
 services:
   seeker:
-    image: ghcr.io/your-username/seeker:latest # 或本地构建: build: .
+    image: ghcr.io/dave2758/seeker-media-:latest # 直接拉取官方云端构建镜像 (或本地构建: build: .)
     container_name: seeker
     restart: unless-stopped
     ports:
@@ -141,6 +141,14 @@ services:
       # - TMDB_API_KEY=your_tmdb_key
       # 可选：配置 Gemini AI 选片分析
       # - GEMINI_API_KEY=your_gemini_key
+      # 可选：对接 PanSou 盘搜容器
+      # - PANSOU_URL=http://your-nas-ip:9933
+      # - PANSOU_USER=your_pansou_username
+      # - PANSOU_PASS=your_pansou_password
+      # 可选：对接 AList 自动转存
+      # - ALIST_URL=http://your-nas-ip:5244
+      # - ALIST_USER=your_alist_username
+      # - ALIST_PASS=your_alist_password
     volumes:
       # 映射您的本地/NAS 电影存放目录
       - /path/to/your/movies:/data/movies
@@ -163,7 +171,7 @@ docker run -d \
   --restart unless-stopped \
   -p 8899:8899 \
   -v /path/to/your/movies:/data/movies \
-  ghcr.io/your-username/seeker:latest
+  ghcr.io/dave2758/seeker-media-:latest
 ```
 
 ---
