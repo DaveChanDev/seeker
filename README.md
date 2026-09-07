@@ -22,6 +22,38 @@
 
 它通过打通 **「资源库浏览 ➔ 盘搜全网聚合 ➔ AI 版本筛选 ➔ 在线流播嗅探 ➔ 自动化转存 ➔ 本地物理落盘」** 的完整闭环，让您彻底摆脱繁琐的手动操作，享受媲美商业级流媒体的家庭影音体验。
 
+
+<div align="center">
+  <br />
+  <h3>✨ 极简暗黑流媒体美学 · 全端沉浸式交互</h3>
+  <table border="0">
+    <tr>
+      <td width="25%" align="center" valign="top">
+        <img src="./assets/screenshots/01_explore.png" alt="片库探索" />
+        <br />
+        <sub><b>🎬 热门片库与精细筛选</b></sub>
+      </td>
+      <td width="25%" align="center" valign="top">
+        <img src="./assets/screenshots/02_ai_decision.png" alt="AI 智能选片" />
+        <br />
+        <sub><b>🧠 Gemini AI 决策与版本导视</b></sub>
+      </td>
+      <td width="25%" align="center" valign="top">
+        <img src="./assets/screenshots/03_pan_sources.png" alt="全网多源聚合" />
+        <br />
+        <sub><b>🔍 全网盘源并发极速匹配</b></sub>
+      </td>
+      <td width="25%" align="center" valign="top">
+        <img src="./assets/screenshots/04_dashboard.png" alt="服务监控与中枢" />
+        <br />
+        <sub><b>📊 物理磁盘与服务运行中枢</b></sub>
+      </td>
+    </tr>
+  </table>
+  <br />
+</div>
+
+
 ---
 
 ## 💡 为什么开发 Seeker？（与传统方案对比）
