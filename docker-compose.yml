@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  seeker:
+    image: seeker:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seeker
+    restart: unless-stopped
+    ports:
+      - "8899:8899"
+    environment:
+      # 服务基础配置
+      - PORT=8899
+      - HOST=0.0.0.0
+      - MEDIA_DIR=/data/movies
+      - LOCAL_MEDIA_PATHS=/data/movies
+
+      # TMDB 元数据 API Key (可选，已有内置 Key)
+      - TMDB_API_KEY=4038b900dd77905b548424e58a8f9871
+
+      # Google Gemini AI 选片分析与剧集对比 (可选)
+      - GEMINI_API_KEY=
+      - GEMINI_MODEL=gemini-1.5-flash
+      # - GEMINI_PROXY=http://127.0.0.1:7890
+
+      # 盘搜与下载服务对接 (可选)
+      # - PANSOU_URL=http://your-nas-ip:9933
+      # - PANSOU_USER=
+      # - PANSOU_PASS=
+
+      # AList 本地转存对接 (可选)
+      # - ALIST_URL=http://your-nas-ip:5244
+      # - ALIST_USER=
+      # - ALIST_PASS=
+      # - ALIST_CACHE_PATH=/夸克网盘/Seeker_Cache
+
+      # Jellyfin 流媒体库同步对接 (可选)
+      # - JELLYFIN_URL=http://your-nas-ip:40097
+      # - JELLYFIN_USER=
+      # - JELLYFIN_PASS=
+    volumes:
+      # 映射本地媒体库路径，用于影视落盘与扫描管理
+      - ./data/movies:/data/movies
+      # 持久化任务与图片缓存 (可选)
+      - ./data/backend:/app/backend/data

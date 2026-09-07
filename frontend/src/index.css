@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #07080a;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* 电影级沉浸环境光背景体系 (Deep Cinema Ambient Flow) */
+.cinema-ambient-bg {
+  background: 
+    radial-gradient(circle at 50% -10%, rgba(29, 185, 84, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 100% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 0% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+    #0d0e12;
+}
+
+.cinema-modal-bg {
+  background: #141418;
+}
+
+/* 磨砂玻璃态与表面质感 (Glassmorphism & Surface Elevation) */
+.glass-panel {
+  background: rgba(20, 20, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(26, 27, 34, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.6), 0 0 20px -2px rgba(29, 185, 84, 0.08);
+}
+
+.glass-card {
+  background: rgba(22, 23, 29, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(28, 29, 38, 0.8);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* 环境微光外发光滤镜 (Ambient Glow System) */
+.glow-emerald {
+  box-shadow: 0 0 20px -3px rgba(29, 185, 84, 0.35);
+}
+
+.glow-amber {
+  box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.35);
+}
+
+/* 呼吸流光骨架屏动画 (Shimmer Skeleton) */
+@keyframes cinema-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-card {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: cinema-shimmer 2s infinite ease-in-out;
+}
+
+/* antd-mobile 样式定制 */
+.adm-tab-bar {
+  background-color: transparent !important;
+  border-top: none !important;
+}
+
+.adm-tab-bar-item {
+  color: #94a3b8 !important;
+  transition: color 0.2s ease;
+}
+
+.adm-tab-bar-item-active {
+  color: #1db954 !important;
+  font-weight: 700 !important;
+}
+
+/* 弹窗响应式适配：手机端全宽底部抽屉 / PC 大屏端宽幅大卡片 (Desktop Center Dialog Evolution) */
+@media (min-width: 768px) {
+  .adm-popup-body {
+    max-width: 44rem !important; /* 704px 宽屏影院质感大卡片 */
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-top-left-radius: 28px !important;
+    border-top-right-radius: 28px !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(29, 185, 84, 0.1) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .adm-popup-body {
+    max-width: 100% !important;
+  }
+}
+
+/* 彻底清除所有按钮、输入框、链接的点击白框与轮廓线（Focus Outline / Focus Ring / Tap Highlight） */
+*:focus,
+*:focus-visible,
+*:focus-within,
+*:active,
+input,
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+button,
+button:focus,
+button:focus-visible,
+button:active,
+a,
+a:focus,
+a:focus-visible,
+select:focus,
+.adm-tab-bar,
+.adm-tab-bar *,
+.adm-search-bar,
+.adm-search-bar *,
+.adm-search-bar-input,
+.adm-search-bar-input-box,
+.adm-input-element {
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+.adm-search-bar-input-box {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.adm-search-bar-input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.adm-search-bar-clear {
+  display: none !important;
+}
+
+/* 彻底隐藏全局所有元素的原生竖向与横向滚动条，保留纯粹丝滑的手指/鼠标滑动体验 */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
